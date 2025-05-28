@@ -127,6 +127,7 @@ void servo_thread(void) {
 
                     //update timestamp
                     //servo_info.timestamp = k_uptime_get();
+                    time_now = 0;
 
                     if(servo_info.angle < 0) {
                         //move left
@@ -191,7 +192,6 @@ void servo_thread(void) {
                 if(count >= SWEEP_ANGLE_UPDATE_RESOLUTION) {
                     count = 0;
                     notify_angle(servo_info.angle);
-                    printk("angle %d\r\n",servo_info.angle);
                 }
 
                 k_mutex_unlock(&PanAngleAccess); 

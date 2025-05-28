@@ -105,35 +105,73 @@ static void track_ccc_cfg_changed(const struct bt_gatt_attr *attr, uint16_t valu
            value == BT_GATT_CCC_NOTIFY ? "enabled" : "disabled", track_sub_count);
 }
 
-static ssize_t write_angle(struct bt_conn *conn, const struct bt_gatt_attr *attr,
-		       const void *buf, uint16_t len, uint16_t offset, uint8_t flags) {
+// Work item and associated data
+static struct k_work angle_work;
 
-	if (len != sizeof(int16_t)) return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
-
-	memcpy(&angle, buf, sizeof(angle));
-    // k_mutex_lock(&PanAngleAccess,K_FOREVER);
-    // servo_info.angle = angle;
-    // servo_info.angle_pending = true;
-    // k_mutex_unlock(&PanAngleAccess);
-	printk("Angle updated by client: %d\n", angle);
+// Worker function
+static void angle_work_handler(struct k_work *work) {
+    servo_info_t local;
     int err;
 
-    
-    // err = k_msgq_put(&angleData,&local,K_NO_WAIT);
+    // Safely update shared data
+    //k_mutex_lock(&PanAngleAccess, K_FOREVER);
+    servo_info.angle = angle;
+    servo_info.angle_pending = true;
+    local = servo_info;
+    //k_mutex_unlock(&PanAngleAccess);
 
-    // //check if full and remove latest element and resend if so
-    // if(err == -ENOMSG || err == -ENOMEM) {
-    //     servo_info_t discard;
-    //     k_msgq_get(&angleData,&discard,K_NO_WAIT);
-    //     k_msgq_put(&angleData,&local,K_NO_WAIT);
-    // }
-    //can notify like this in this configuration
-    // if (angle_sub_count > 0) {
-    //     bt_gatt_notify(NULL, attr, &angle, sizeof(angle));
-    // }
-
-	return sizeof(angle);
+    printk("Angle updated by client (deferred): %d\n", servo_info.angle);
 }
+
+// Init function (call once during init or main)
+void angle_work_init(void) {
+    k_work_init(&angle_work, angle_work_handler);
+}
+
+static ssize_t write_angle(struct bt_conn *conn, const struct bt_gatt_attr *attr,
+                           const void *buf, uint16_t len, uint16_t offset, uint8_t flags) {
+
+    if (len != sizeof(int16_t)) {
+        return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
+    }
+
+    memcpy(&angle, buf, sizeof(angle));
+
+    // Offload work to avoid blocking the GATT stack
+    k_work_submit(&angle_work);
+
+    return sizeof(angle);
+}
+
+// static ssize_t write_angle(struct bt_conn *conn, const struct bt_gatt_attr *attr,
+// 		       const void *buf, uint16_t len, uint16_t offset, uint8_t flags) {
+
+// 	if (len != sizeof(int16_t)) return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
+
+// 	memcpy(&angle, buf, sizeof(angle));
+//     k_mutex_lock(&PanAngleAccess,K_FOREVER);
+//     servo_info.angle = angle;
+//     servo_info.angle_pending = true;
+//     k_mutex_unlock(&PanAngleAccess);
+// 	printk("Angle updated by client: %d\n", angle);
+//     int err;
+
+    
+//     // err = k_msgq_put(&angleData,&local,K_NO_WAIT);
+
+//     // //check if full and remove latest element and resend if so
+//     // if(err == -ENOMSG || err == -ENOMEM) {
+//     //     servo_info_t discard;
+//     //     k_msgq_get(&angleData,&discard,K_NO_WAIT);
+//     //     k_msgq_put(&angleData,&local,K_NO_WAIT);
+//     // }
+//     //can notify like this in this configuration
+//     // if (angle_sub_count > 0) {
+//     //     bt_gatt_notify(NULL, attr, &angle, sizeof(angle));
+//     // }
+
+// 	return sizeof(angle);
+// }
 
 //variable may not be used, but implemented in case it is needed
 static ssize_t write_power_state(struct bt_conn *conn, const struct bt_gatt_attr *attr,
@@ -289,6 +327,8 @@ void bt_ready(int err)
 		settings_load();
 	}
 
+
+    angle_work_init();
     k_work_init_delayable(&adv_restart_work, adv_restart);
     setup_advertising();
 }

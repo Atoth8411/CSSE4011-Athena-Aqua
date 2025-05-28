@@ -37,7 +37,7 @@ int main(void) {
         return 0;
     }
 
-    //ultrasonic_init();
+    ultrasonic_init();
     servo_start_thread();
     //ultrasonic_thread_init(); //just does not need the extra thread for it, all operations done in servo
 
