@@ -1,0 +1,26 @@
+sample:
+  name: Task1 - Random Number Display
+
+tests:
+  sample.task1.random_display:
+    tags:
+      - rng
+      - uart
+      - printk
+    filter: dt_enabled_alias_with_parent_compat()
+    depends_on: uart
+    harness: console
+    harness_config:
+      type: one_line
+      regex: "Random Number: [0-9A-F]{8}"
+    integration_platforms:
+      - frdm_k64f
+      - nrf52840dk_nrf52840
+
+manifest:
+  projects:
+    - name: mcuboot
+      path: modules/bootloader/mcuboot
+      revision: v1.9.0
+  self:
+    path: .
