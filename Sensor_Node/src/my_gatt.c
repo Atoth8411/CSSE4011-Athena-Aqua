@@ -111,11 +111,11 @@ static ssize_t write_angle(struct bt_conn *conn, const struct bt_gatt_attr *attr
 	if (len != sizeof(int16_t)) return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
 
 	memcpy(&angle, buf, sizeof(angle));
-    k_mutex_lock(&PanAngleAccess,K_FOREVER);
-    servo_info.angle = angle;
-    servo_info.angle_pending = true;
-    k_mutex_unlock(&PanAngleAccess);
-	printk("Angle updated by client: %d\n", servo_info.angle);
+    // k_mutex_lock(&PanAngleAccess,K_FOREVER);
+    // servo_info.angle = angle;
+    // servo_info.angle_pending = true;
+    // k_mutex_unlock(&PanAngleAccess);
+	printk("Angle updated by client: %d\n", angle);
     int err;
 
     
@@ -150,7 +150,7 @@ static ssize_t write_power_state(struct bt_conn *conn, const struct bt_gatt_attr
     if (new_val != power_state) {
         power_state = new_val;
 
-        k_msgq_put(&powerData,&power_state,K_NO_WAIT);
+        //k_msgq_put(&powerData,&power_state,K_NO_WAIT);
 
         printk("Power state updated to: %d\n", power_state);
 
@@ -245,6 +245,7 @@ static void connected(struct bt_conn *conn, uint8_t err)
         connection_count++;
         printk("Connected to %u/%u clients\n",connection_count, MAX_BT_CONNECTIONS);
         if(connection_count < MAX_BT_CONNECTIONS) {
+            printk("connection count: %d\r\n",connection_count);
             k_work_schedule(&adv_restart_work, K_NO_WAIT);
         }
     }

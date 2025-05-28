@@ -20,7 +20,7 @@ static int start_turret(const struct shell* shell, size_t argc, char **argv) {
     }
 
     //send new power state
-    write_data_no_ack(1,&power_info);
+    write_data_with_response(1,&power_info);
     return 0;
 }
 
@@ -31,7 +31,7 @@ static int stop_turret(const struct shell* shell, size_t argc, char **argv) {
     }
 
     //send new power state
-    write_data_no_ack(0,&power_info);
+    write_data_with_response(0,&power_info);
     return 0;
 }
 
@@ -72,6 +72,7 @@ int main(void) {
         printk("It is actually a problem %d\r\n", power_info.handle);
         settings_loaded = false;
     }
+    settings_loaded = false;
 
     printk("handle: %d\r\n",angle_info.handle);
 

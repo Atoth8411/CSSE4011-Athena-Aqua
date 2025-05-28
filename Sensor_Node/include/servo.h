@@ -29,6 +29,4 @@ void servo_set_target_angle_pan(int angle);
 extern struct k_mutex PanAngleAccess;
 extern volatile servo_info_t servo_info;
 
-extern struct k_msgq angleData;
-extern struct k_msgq powerData;
 #endif // SERVO_H

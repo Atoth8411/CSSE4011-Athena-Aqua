@@ -11,7 +11,7 @@
 #define PAN_CHANNEL 0  // P0.13 (PWM_OUT0)
 #define TILT_CHANNEL 1 // P0.11 (PWM_OUT1)
 
-#define TIMEOUT_MS 1000
+#define TIMEOUT_MS 2000
 #define SWEEP_ANGLE_UPDATE_RESOLUTION 5
 
 //cannot track under current setup
@@ -20,9 +20,6 @@
 
 static const struct device *pwm_dev;
 static volatile int target_angle_pan = SERVO_DEFAULT_ANGLE;
-
-K_MSGQ_DEFINE(angleData, sizeof(servo_info_t), 10, 8);
-K_MSGQ_DEFINE(powerData, sizeof(int16_t), 10, 8);
 
 struct k_mutex PanAngleAccess;
 volatile servo_info_t servo_info;
@@ -104,17 +101,17 @@ void servo_thread(void) {
     // int16_t distance_difference = 0;
     uint8_t count = 0;
     // bool heuristics_on = false;
-    servo_info_t local;
-    servo_info_t received;
+    // servo_info_t local;
+    // servo_info_t received;
     int angleStatus = 1;
     int angle = 90;
     int step = 3;
 
     //set inital state:
-    local.angle = SERVO_DEFAULT_ANGLE;
-    local.angle_pending = false;
-    local.mode = MODE_SWEEP;
-    start_sweep(&local);
+    servo_info.angle = SERVO_DEFAULT_ANGLE;
+    servo_info.angle_pending = false;
+    servo_info.mode = MODE_SWEEP;
+    start_sweep(&servo_info);
 
     //should it notify with inital value?
 
@@ -129,7 +126,7 @@ void servo_thread(void) {
                     servo_info.angle_pending = false;
 
                     //update timestamp
-                    servo_info.timestamp = k_uptime_get();
+                    //servo_info.timestamp = k_uptime_get();
 
                     if(servo_info.angle < 0) {
                         //move left
@@ -157,9 +154,10 @@ void servo_thread(void) {
                         notify_angle(angle);
                     } else {
 
-                        notify_angle(angle);
                         sonic_distance = measure_distance_cm(gpio_dev);
+                        printk("sonic_distance: %d\r\n",sonic_distance);
                         notify_distance(sonic_distance); 
+                        notify_angle(angle);
                     }
                 } else {
                     // time_now = k_uptime_get();
@@ -168,9 +166,11 @@ void servo_thread(void) {
                     //     local.mode = MODE_SWEEP;
                     //     start_sweep(&local);
                     // }
-                    if (k_uptime_delta(&servo_info.timestamp) >= TIMEOUT_MS) {
+                    time_now++;
+                    if(time_now >= 10) {
+                        time_now = 0;
                         servo_info.mode = MODE_SWEEP;
-                        start_sweep(&local);
+                        start_sweep(&servo_info);
                     }
                 }
                 k_sleep(K_MSEC(100));
@@ -178,7 +178,7 @@ void servo_thread(void) {
                 break;
 
             case(MODE_SWEEP):
-                if(local.angle_pending) {
+                if(servo_info.angle_pending) {
                     servo_info.mode = MODE_TRACK;
                     printk("switching\r\n");
                     continue;
@@ -191,7 +191,9 @@ void servo_thread(void) {
                 if(count >= SWEEP_ANGLE_UPDATE_RESOLUTION) {
                     count = 0;
                     notify_angle(servo_info.angle);
+                    printk("angle %d\r\n",servo_info.angle);
                 }
+
                 k_mutex_unlock(&PanAngleAccess); 
                 k_sleep(K_MSEC(100));
                 break;

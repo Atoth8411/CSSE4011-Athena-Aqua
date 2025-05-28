@@ -35,6 +35,6 @@ extern struct k_msgq angleQueue;
 extern struct k_msgq distanceQueue;
 
 uint8_t startup_scan(void);
-int write_data_no_ack(int16_t value, volatile struct service_info* info);
+int write_data_with_response(int16_t value, volatile struct service_info* info);
 
 #endif // MY_CLIENT

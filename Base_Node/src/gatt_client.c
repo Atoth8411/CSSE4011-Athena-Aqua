@@ -34,27 +34,47 @@ struct service_info distance_info = {.name = "distance", .subscribed = false, .d
 struct service_info power_info = {.name = "power", .subscribed = false, .discovered = false};
 
 //has to account for if connection is still referencable
-int write_data_no_ack(int16_t value, volatile struct service_info* info) {
+// Callback when write completes
+static void write_cb(struct bt_conn *conn, uint8_t err,
+                     struct bt_gatt_write_params *params)
+{
+    if (err) {
+        printk("Write failed (err 0x%02x)\n", err);
+    } else {
+        printk("Write successful\n");
+    }
+}
 
+// Keep the write_params static to ensure it persists during the async call
+static struct bt_gatt_write_params write_params;
+
+int write_data_with_response(int16_t value, volatile struct service_info* info)
+{
     struct bt_conn *conn = bt_conn_ref(default_conn);
     if (!conn) {
         return -ENOTCONN;
     }
 
-    if(!info->discovered) {
+    if (!info->discovered) {
+        bt_conn_unref(conn);
         return -1;
-    } 
+    }
 
-    //int err = bt_gatt_write_with_response(conn, info->handle, &value, sizeof(value), false);
-    // if (err) {
-	// 	printk("Failed to write %s (err %d)\n",info->name, err);
-	// } else {
-	// 	printk("%s value %d written to server\n",info->name, value);
-	// }
+    write_params.func = write_cb;
+    write_params.handle = info->handle;
+    write_params.offset = 0;
+    write_params.data = &value;
+    write_params.length = sizeof(value);
+
+    int err = bt_gatt_write(conn, &write_params);
+    if (err) {
+        printk("Failed to write %s (err %d)\n", info->name, err);
+    } else {
+        printk("%s value %d written to server (write with response)\n", info->name, value);
+    }
 
     bt_conn_unref(conn);
-
-    return 0;
+    return err;
 }
 
 //should save to a global variable and a global flag, or a message queue(use this) to get notification values
