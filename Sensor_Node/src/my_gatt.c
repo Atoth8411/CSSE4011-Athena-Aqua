@@ -24,8 +24,8 @@ static struct bt_uuid_128 power_state_uuid = BT_UUID_INIT_128(BT_UUID_POWER_STAT
 /* Application State */
 static int16_t angle = 0;
 static int16_t distance = 0;
-static uint8_t power_state = 0;
-static uint8_t tracking_state = 0;
+static uint8_t power_state = 1;
+static uint8_t tracking_state = 1;
 
 /* Advertisement data */
 static const struct bt_data ad[] = {
@@ -180,15 +180,12 @@ static ssize_t write_power_state(struct bt_conn *conn, const struct bt_gatt_attr
     if (len != sizeof(uint8_t)) {
         return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
     }
-
-    printk("Write received\r\n");
-
     uint8_t new_val = *((uint8_t *)buf);
 
     if (new_val != power_state) {
         power_state = new_val;
 
-        //k_msgq_put(&powerData,&power_state,K_NO_WAIT);
+        turret_state = power_state;
 
         printk("Power state updated to: %d\n", power_state);
 

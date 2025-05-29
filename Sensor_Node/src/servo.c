@@ -25,7 +25,7 @@ struct k_mutex PanAngleAccess;
 volatile servo_info_t servo_info;
 
 // struct k_mutex PowerStateAccess;
-// volatile uint8_t turret_state = 1;
+volatile uint8_t turret_state = 1;
 
 /* === Angle to pulse width === */
 static uint32_t angle_to_pulse(int degrees) {
@@ -97,15 +97,11 @@ void servo_thread(void) {
     int last_pan = -1;
     int64_t time_now = 0;
     int16_t sonic_distance = 0;
-    // int16_t last_distance = 0;
-    // int16_t distance_difference = 0;
+    int64_t prev_angle = 90;
     uint8_t count = 0;
-    // bool heuristics_on = false;
-    // servo_info_t local;
-    // servo_info_t received;
     int angleStatus = 1;
     int angle = 90;
-    int step = 3;
+    int step = 2;
 
     //set inital state:
     servo_info.angle = SERVO_DEFAULT_ANGLE;
@@ -118,7 +114,13 @@ void servo_thread(void) {
     printk("Servo thread started\r\n");
     while (1) {
 
-        k_mutex_lock(&PanAngleAccess,K_FOREVER);
+        //do nothing if the turret is turned off
+        if(turret_state == 0) {
+            k_sleep(K_MSEC(50));
+            continue;
+        }
+
+        //k_mutex_lock(&PanAngleAccess,K_FOREVER);
         switch(servo_info.mode) {
             case MODE_TRACK:
                 if(servo_info.angle_pending) {
@@ -131,7 +133,7 @@ void servo_thread(void) {
 
                     if(servo_info.angle < 0) {
                         //move left
-                        angle -= step;
+                        angle += servo_info.angle;
 
                         if (angle < 0) {
                             angle = 0;
@@ -143,7 +145,7 @@ void servo_thread(void) {
                         notify_angle(angle);
                     } else if(servo_info.angle > 0) {
                         //move right
-                        angle += step;
+                        angle += servo_info.angle;
 
                         if (angle < 0) {
                             angle = 0;
@@ -168,19 +170,21 @@ void servo_thread(void) {
                     //     start_sweep(&local);
                     // }
                     time_now++;
-                    if(time_now >= 10) {
+                    printk("time now: %d\r\n",time_now);
+                    if(time_now >= 60) {
                         time_now = 0;
                         servo_info.mode = MODE_SWEEP;
                         start_sweep(&servo_info);
                     }
                 }
-                k_sleep(K_MSEC(100));
-                k_mutex_unlock(&PanAngleAccess); 
+                k_sleep(K_MSEC(50));
+                //k_mutex_unlock(&PanAngleAccess); 
                 break;
 
             case(MODE_SWEEP):
                 if(servo_info.angle_pending) {
                     servo_info.mode = MODE_TRACK;
+                    angle = prev_angle;
                     printk("switching\r\n");
                     continue;
                 }
@@ -191,10 +195,11 @@ void servo_thread(void) {
                 //this is only for pretty sweep visualization, so can be removed if not needed
                 if(count >= SWEEP_ANGLE_UPDATE_RESOLUTION) {
                     count = 0;
+                    prev_angle = servo_info.angle;
                     notify_angle(servo_info.angle);
                 }
 
-                k_mutex_unlock(&PanAngleAccess); 
+                //k_mutex_unlock(&PanAngleAccess); 
                 k_sleep(K_MSEC(100));
                 break;
 

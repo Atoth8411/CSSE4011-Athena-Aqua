@@ -29,4 +29,6 @@ void servo_set_target_angle_pan(int angle);
 extern struct k_mutex PanAngleAccess;
 extern volatile servo_info_t servo_info;
 
+extern volatile uint8_t turret_state;
+
 #endif // SERVO_H
