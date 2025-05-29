@@ -1,0 +1,656 @@
+Command: /home/atoth/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/atoth/EspCam4011/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/atoth/EspCam4011/cam_streaming/build/cam_streaming.elf /home/atoth/EspCam4011/cam_streaming/build/bootloader/bootloader.elf -m '/home/atoth/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/atoth/EspCam4011/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:38:36[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e6a4h (124580) map[0m
+[0;32mI (132) esp_image: segment 1: paddr=0002e6cc vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002e6f4 vaddr=3ffb0000 size=01924h (  6436) load[0m
+[0;32mI (139) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=93b1ch (604956) map[0m
+[0;32mI (350) esp_image: segment 4: paddr=000c3b44 vaddr=3ffb1924 size=03660h ( 13920) load[0m
+[0;32mI (356) esp_image: segment 5: paddr=000c71ac vaddr=40080000 size=185d4h ( 99796) load[0m
+[0;32mI (407) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (407) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (426) cpu_start: Pro cpu start user code[0m
+[0;32mI (426) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (426) app_init: Application information:[0m
+[0;32mI (426) app_init: Project name:     cam_streaming[0m
+[0;32mI (430) app_init: App version:      1[0m
+[0;32mI (434) app_init: Compile time:     May 17 2025 18:38:26[0m
+[0;32mI (439) app_init: ELF file SHA256:  918144ecf...[0m
+[0;32mI (443) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (449) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (452) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (456) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (460) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (467) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (472) heap_init: At 3FFB9920 len 000266E0 (153 KiB): DRAM[0m
+[0;32mI (477) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (482) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (488) heap_init: At 400985D4 len 00007A2C (30 KiB): IRAM[0m
+[0;32mI (495) spi_flash: detected chip: generic[0m
+[0;32mI (497) spi_flash: flash io: dio[0m
+[0;33mW (500) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (513) main_task: Started on CPU0[0m
+[0;32mI (523) main_task: Calling app_main()[0m
+[0;32mI (523) CAM: Program Started[0m
+
+[0;32mI (543) cam_hal: cam init ok[0m
+[0;32mI (543) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (543) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (583) camera: Detected camera at address=0x30[0m
+[0;32mI (583) camera: Detected OV2640 camera[0m
+[0;32mI (583) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (653) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (653) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[1;31mE (663) cam_hal: cam_dma_config(301): frame buffer malloc failed[0m
+[1;31mE (663) cam_hal: cam_config(390): cam_dma_config failed[0m
+[1;31mE (673) camera: Camera config failed with error 0xffffffff[0m
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x400d8316
+file: "./main/main.c" line 61
+func: init_camera
+expression: esp_camera_init(&camera_config)
+
+abort() was called at PC 0x400894d3 on core 0
+
+
+Backtrace: 0x40081ad1:0x3ffbba90 0x400894dd:0x3ffbbab0 0x400912bd:0x3ffbbad0 0x400894d3:0x3ffbbb40 0x400d8316:0x3ffbbb70 0x400d8466:0x3ffbbc00 0x40161b10:0x3ffbbc20 0x40089fc5:0x3ffbbc50
+
+
+
+
+ELF file SHA256: 918144ecf
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:38:36[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e6a4h (124580) map[0m
+[0;32mI (132) esp_image: segment 1: paddr=0002e6cc vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002e6f4 vaddr=3ffb0000 size=01924h (  6436) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=93b1ch (604956) map[0m
+[0;32mI (350) esp_image: segment 4: paddr=000c3b44 vaddr=3ffb1924 size=03660h ( 13920) load[0m
+[0;32mI (356) esp_image: segment 5: paddr=000c71ac vaddr=40080000 size=185d4h ( 99796) load[0m
+[0;32mI (407) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (407) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (426) cpu_start: Pro cpu start user code[0m
+[0;32mI (426) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (426) app_init: Application information:[0m
+[0;32mI (426) app_init: Project name:     cam_streaming[0m
+[0;32mI (430) app_init: App version:      1[0m
+[0;32mI (434) app_init: Compile time:     May 17 2025 18:38:26[0m
+[0;32mI (439) app_init: ELF file SHA256:  918144ecf...[0m
+[0;32mI (443) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (448) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (452) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (456) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (460) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (467) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (471) heap_init: At 3FFB9920 len 000266E0 (153 KiB): DRAM[0m
+[0;32mI (477) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (482) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (488) heap_init: At 400985D4 len 00007A2C (30 KiB): IRAM[0m
+[0;32mI (494) spi_flash: detected chip: generic[0m
+[0;32mI (497) spi_flash: flash io: dio[0m
+[0;33mW (500) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (513) main_task: Started on CPU0[0m
+[0;32mI (523) main_task: Calling app_main()[0m
+[0;32mI (523) CAM: Program Started[0m
+
+[0;32mI (543) cam_hal: cam init ok[0m
+[0;32mI (543) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (543) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (583) camera: Detected camera at address=0x30[0m
+[0;32mI (583) camera: Detected OV2640 camera[0m
+[0;32mI (583) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (653) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (653) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[1;31mE (663) cam_hal: cam_dma_config(301): frame buffer malloc failed[0m
+[1;31mE (663) cam_hal: cam_config(390): cam_dma_config failed[0m
+[1;31mE (673) camera: Camera config failed with error 0xffffffff[0m
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x400d8316
+file: "./main/main.c" line 61
+func: init_camera
+expression: esp_camera_init(&camera_config)
+
+abort() was called at PC 0x400894d3 on core 0
+
+
+Backtrace: 0x40081ad1:0x3ffbba90 0x400894dd:0x3ffbbab0 0x400912bd:0x3ffbbad0 0x400894d3:0x3ffbbb40 0x400d8316:0x3ffbbb70 0x400d8466:0x3ffbbc00 0x40161b10:0x3ffbbc20 0x40089fc5:0x3ffbbc50
+
+
+
+
+ELF file SHA256: 918144ecf
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:38:36[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e6a4h (124580) map[0m
+[0;32mI (132) esp_image: segment 1: paddr=0002e6cc vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002e6f4 vaddr=3ffb0000 size=01924h (  6436) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=93b1ch (604956) map[0m
+[0;32mI (350) esp_image: segment 4: paddr=000c3b44 vaddr=3ffb1924 size=03660h ( 13920) load[0m
+[0;32mI (356) esp_image: segment 5: paddr=000c71ac vaddr=40080000 size=185d4h ( 99796) load[0m
+[0;32mI (407) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (407) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (426) cpu_start: Pro cpu start user code[0m
+[0;32mI (426) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (426) app_init: Application information:[0m
+[0;32mI (426) app_init: Project name:     cam_streaming[0m
+[0;32mI (430) app_init: App version:      1[0m
+[0;32mI (434) app_init: Compile time:     May 17 2025 18:38:26[0m
+[0;32mI (439) app_init: ELF file SHA256:  918144ecf...[0m
+[0;32mI (443) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (448) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (452) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (456) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (460) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (467) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (471) heap_init: At 3FFB9920 len 000266E0 (153 KiB): DRAM[0m
+[0;32mI (477) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (482) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (488) heap_init: At 400985D4 len 00007A2C (30 KiB): IRAM[0m
+[0;32mI (494) spi_flash: detected chip: generic[0m
+[0;32mI (497) spi_flash: flash io: dio[0m
+[0;33mW (500) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (513) main_task: Started on CPU0[0m
+[0;32mI (523) main_task: Calling app_main()[0m
+[0;32mI (523) CAM: Program Started[0m
+
+[0;32mI (543) cam_hal: cam init ok[0m
+[0;32mI (543) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (543) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (583) camera: Detected camera at address=0x30[0m
+[0;32mI (583) camera: Detected OV2640 camera[0m
+[0;32mI (583) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (653) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (653) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[1;31mE (663) cam_hal: cam_dma_config(301): frame buffer malloc failed[0m
+[1;31mE (663) cam_hal: cam_config(390): cam_dma_config failed[0m
+[1;31mE (673) camera: Camera config failed with error 0xffffffff[0m
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x400d8316
+file: "./main/main.c" line 61
+func: init_camera
+expression: esp_camera_init(&camera_config)
+
+abort() was called at PC 0x400894d3 on core 0
+
+
+Backtrace: 0x40081ad1:0x3ffbba90 0x400894dd:0x3ffbbab0 0x400912bd:0x3ffbbad0 0x400894d3:0x3ffbbb40 0x400d8316:0x3ffbbb70 0x400d8466:0x3ffbbc00 0x40161b10:0x3ffbbc20 0x40089fc5:0x3ffbbc50
+
+
+
+
+ELF file SHA256: 918144ecf
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:38:36[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e6a4h (124580) map[0m
+[0;32mI (132) esp_image: segment 1: paddr=0002e6cc vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002e6f4 vaddr=3ffb0000 size=01924h (  6436) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=93b1ch (604956) map[0m
+[0;32mI (350) esp_image: segment 4: paddr=000c3b44 vaddr=3ffb1924 size=03660h ( 13920) load[0m
+[0;32mI (356) esp_image: segment 5: paddr=000c71ac vaddr=40080000 size=185d4h ( 99796) load[0m
+[0;32mI (407) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (407) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (426) cpu_start: Pro cpu start user code[0m
+[0;32mI (426) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (426) app_init: Application information:[0m
+[0;32mI (426) app_init: Project name:     cam_streaming[0m
+[0;32mI (430) app_init: App version:      1[0m
+[0;32mI (434) app_init: Compile time:     May 17 2025 18:38:26[0m
+[0;32mI (439) app_init: ELF file SHA256:  918144ecf...[0m
+[0;32mI (443) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (448) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (452) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (456) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (460) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (467) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (471) heap_init: At 3FFB9920 len 000266E0 (153 KiB): DRAM[0m
+[0;32mI (477) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (482) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (488) heap_init: At 400985D4 len 00007A2C (30 KiB): IRAM[0m
+[0;32mI (494) spi_flash: detected chip: generic[0m
+[0;32mI (497) spi_flash: flash io: dio[0m
+[0;33mW (500) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (513) main_task: Started on CPU0[0m
+[0;32mI (523) main_task: Calling app_main()[0m
+[0;32mI (523) CAM: Program Started[0m
+
+[0;32mI (543) cam_hal: cam init ok[0m
+[0;32mI (543) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (543) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (583) camera: Detected camera at address=0x30[0m
+[0;32mI (583) camera: Detected OV2640 camera[0m
+[0;32mI (583) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (653) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (653) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[1;31mE (663) cam_hal: cam_dma_config(301): frame buffer malloc failed[0m
+[1;31mE (663) cam_hal: cam_config(390): cam_dma_config failed[0m
+[1;31mE (673) camera: Camera config failed with error 0xffffffff[0m
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x400d8316
+file: "./main/main.c" line 61
+func: init_camera
+expression: esp_camera_init(&camera_config)
+
+abort() was called at PC 0x400894d3 on core 0
+
+
+Backtrace: 0x40081ad1:0x3ffbba90 0x400894dd:0x3ffbbab0 0x400912bd:0x3ffbbad0 0x400894d3:0x3ffbbb40 0x400d8316:0x3ffbbb70 0x400d8466:0x3ffbbc00 0x40161b10:0x3ffbbc20 0x40089fc5:0x3ffbbc50
+
+
+
+
+ELF file SHA256: 918144ecf
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:38:36[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e6a4h (124580) map[0m
+[0;32mI (132) esp_image: segment 1: paddr=0002e6cc vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002e6f4 vaddr=3ffb0000 size=01924h (  6436) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=93b1ch (604956) map[0m
+[0;32mI (350) esp_image: segment 4: paddr=000c3b44 vaddr=3ffb1924 size=03660h ( 13920) load[0m
+[0;32mI (356) esp_image: segment 5: paddr=000c71ac vaddr=40080000 size=185d4h ( 99796) load[0m
+[0;32mI (407) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (407) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (426) cpu_start: Pro cpu start user code[0m
+[0;32mI (426) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (426) app_init: Application information:[0m
+[0;32mI (426) app_init: Project name:     cam_streaming[0m
+[0;32mI (430) app_init: App version:      1[0m
+[0;32mI (434) app_init: Compile time:     May 17 2025 18:38:26[0m
+[0;32mI (439) app_init: ELF file SHA256:  918144ecf...[0m
+[0;32mI (443) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (448) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (452) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (456) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (460) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (467) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (471) heap_init: At 3FFB9920 len 000266E0 (153 KiB): DRAM[0m
+[0;32mI (477) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (482) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (488) heap_init: At 400985D4 len 00007A2C (30 KiB): IRAM[0m
+[0;32mI (494) spi_flash: detected chip: generic[0m
+[0;32mI (497) spi_flash: flash io: dio[0m
+[0;33mW (500) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (513) main_task: Started on CPU0[0m
+[0;32mI (523) main_task: Calling app_main()[0m
+[0;32mI (523) CAM: Program Started[0m
+
+[0;32mI (543) cam_hal: cam init ok[0m
+[0;32mI (543) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (543) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (583) camera: Detected camera at address=0x30[0m
+[0;32mI (583) camera: Detected OV2640 camera[0m
+[0;32mI (583) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (653) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (653) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[1;31mE (663) cam_hal: cam_dma_config(301): frame buffer malloc failed[0m
+[1;31mE (663) cam_hal: cam_config(390): cam_dma_config failed[0m
+[1;31mE (673) camera: Camera config failed with error 0xffffffff[0m
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x400d8316
+file: "./main/main.c" line 61
+func: init_camera
+expression: esp_camera_init(&camera_config)
+
+abort() was called at PC 0x400894d3 on core 0
+
+
+Backtrace: 0x40081ad1:0x3ffbba90 0x400894dd:0x3ffbbab0 0x400912bd:0x3ffbbad0 0x400894d3:0x3ffbbb40 0x400d8316:0x3ffbbb70 0x400d8466:0x3ffbbc00 0x40161b10:0x3ffbbc20 0x40089fc5:0x3ffbbc50
+
+
+
+
+ELF file SHA256: 918144ecf
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:38:36[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e6a4h (124580) map[0m
+[0;32mI (132) esp_image: segment 1: paddr=0002e6cc vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002e6f4 vaddr=3ffb0000 size=01924h (  6436) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=93b1ch (604956) map[0m
+[0;32mI (350) esp_image: segment 4: paddr=000c3b44 vaddr=3ffb1924 size=03660h ( 13920) load[0m
+[0;32mI (356) esp_image: segment 5: paddr=000c71ac vaddr=40080000 size=185d4h ( 99796) load[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:38:36[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e6a4h (124580) map[0m
+[0;32mI (132) esp_image: segment 1: paddr=0002e6cc vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002e6f4 vaddr=3ffb0000 size=01924h (  6436) load[0m
+[0;32mI (139) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=93b1ch (604956) map[0m
+[0;32mI (350) esp_image: segment 4: paddr=000c3b44 vaddr=3ffb1924 size=03660h ( 13920) load[0m
+[0;32mI (356) esp_image: segment 5: paddr=000c71ac vaddr=40080000 size=185d4h ( 99796) load[0m
+[0;32mI (407) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (407) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (426) cpu_start: Pro cpu start user code[0m
+[0;32mI (426) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (426) app_init: Application information:[0m
+[0;32mI (426) app_init: Project name:     cam_streaming[0m
+[0;32mI (430) app_init: App version:      1[0m
+[0;32mI (434) app_init: Compile time:     May 17 2025 18:38:26[0m
+[0;32mI (439) app_init: ELF file SHA256:  918144ecf...[0m
+[0;32mI (443) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (449) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (452) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (456) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (460) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (467) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (472) heap_init: At 3FFB9920 len 000266E0 (153 KiB): DRAM[0m
+[0;32mI (477) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (482) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (488) heap_init: At 400985D4 len 00007A2C (30 KiB): IRAM[0m
+[0;32mI (495) spi_flash: detected chip: generic[0m
+[0;32mI (497) spi_flash: flash io: dio[0m
+[0;33mW (500) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (513) main_task: Started on CPU0[0m
+[0;32mI (523) main_task: Calling app_main()[0m
+[0;32mI (523) CAM: Program Started[0m
+
+[0;32mI (543) cam_hal: cam init ok[0m
+[0;32mI (543) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (543) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (583) camera: Detected camera at address=0x30[0m
+[0;32mI (583) camera: Detected OV2640 camera[0m
+[0;32mI (583) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (653) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (653) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[1;31mE (663) cam_hal: cam_dma_config(301): frame buffer malloc failed[0m
+[1;31mE (663) cam_hal: cam_config(390): cam_dma_config failed[0m
+[1;31mE (673) camera: Camera config failed with error 0xffffffff[0m
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x400d8316
+file: "./main/main.c" line 61
+func: init_camera
+expression: esp_camera_init(&camera_config)
+
+abort() was called at PC 0x400894d3 on core 0
+
+
+Backtrace: 0x40081ad1:0x3ffbba90 0x400894dd:0x3ffbbab0 0x400912bd:0x3ffbbad0 0x400894d3:0x3ffbbb40 0x400d8316:0x3ffbbb70 0x400d8466:0x3ffbbc00 0x40161b10:0x3ffbbc20 0x40089fc5:0x3ffbbc50
+
+
+
+
+ELF file SHA256: 918144ecf
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:38:36[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e6a4h (124580) map[0m
+[0;32mI (132) esp_image: segment 1: paddr=0002e6cc vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002e6f4 vaddr=3ffb0000 size=01924h (  6436) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=93b1ch (604956) map[0m
+[0;32mI (350) esp_image: segment 4: paddr=000c3b44 vaddr=3ffb1924 size=03660h ( 13920) load[0m
+[0;32mI (356) esp_image: segment 5: paddr=000c71ac vaddr=40080000 size=185d4h ( 99796) load[0m
+[0;32mI (407) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (407) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (426) cpu_start: Pro cpu start user code[0m
+[0;32mI (426) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (426) app_init: Application information:[0m
+[0;32mI (426) app_init: Project name:     cam_streaming[0m
+[0;32mI (430) app_init: App version:      1[0m
+[0;32mI (434) app_init: Compile time:     May 17 2025 18:38:26[0m
+[0;32mI (439) app_init: ELF file SHA256:  918144ecf...[0m
+[0;32mI (443) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (448) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (452) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (456) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (460) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (467) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (471) heap_init: At 3FFB9920 len 000266E0 (153 KiB): DRAM[0m
+[0;32mI (477) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (482) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (488) heap_init: At 400985D4 len 00007A2C (30 KiB): IRAM[0m
+[0;32mI (494) spi_flash: detected chip: generic[0m
+[0;32mI (497) spi_flash: flash io: dio[0m
+[0;33mW (500) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (513) main_task: Started on CPU0[0m
+[0;32mI (523) main_task: Calling app_main()[0m
+[0;32mI (523) CAM: Program Started[0m
+
+[0;32mI (543) cam_hal: cam init ok[0m
+[0;32mI (543) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (543) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (583) camera: Detected camera at address=0x30[0m
+[0;32mI (583) camera: Detected OV2640 camera[0m
+[0;32mI (583) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (653) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (653) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[1;31mE (663) cam_hal: cam_dma_config(301): frame buffer malloc failed[0m
+[1;31mE (663) cam_hal: cam_config(390): cam_dma_config failed[0m
+[1;31mE (673) camera: Camera config failed with error 0xffffffff[0m
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x400d8316
+file: "./main/main.c" line 61
+func: init_camera
+expression: esp_camera_init(&camera_config)
+
+abort() was called at PC 0x400894d3 on core 0
+
+
+Backtrace: 0x40081ad1:0x3ffbba90 0x400894dd:0x3ffbbab0 0x400912bd:0x3ffbbad0 0x400894d3:0x3ffbbb40 0x400d8316:0x3ffbbb70 0x400d8466:0x3ffbbc00 0x40161b10:0x3ffbbc20 0x40089fc5:0x3ffbbc50
+
+
+
+
+ELF file SHA256: 918144ecf
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:38:36[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e6a4h (124580) map[0m
+[0;32mI (132) esp_image: segment 1: paddr=0002e6cc vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002e6f4 vaddr=3ffb0000 size=01924h (  6436) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=93b1ch (604956) map[0m

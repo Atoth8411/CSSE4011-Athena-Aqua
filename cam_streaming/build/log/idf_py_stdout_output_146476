@@ -1,0 +1,1569 @@
+Command: /home/atoth/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/atoth/EspCam4011/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/atoth/EspCam4011/cam_streaming/build/cam_streaming.elf /home/atoth/EspCam4011/cam_streaming/build/bootloader/bootloader.elf -m '/home/atoth/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/atoth/EspCam4011/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Ju�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:44:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24f30h (151344) map[0m
+[0;32mI (141) esp_image: segment 1: paddr=00034f58 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00034f80 vaddr=3ffb0000 size=05034h ( 20532) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00039fbc vaddr=40080000 size=0605ch ( 24668) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a3634h (669236) map[0m
+[0;32mI (392) esp_image: segment 5: paddr=000e365c vaddr=4008605c size=16418h ( 91160) load[0m
+[0;32mI (441) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (441) boot: Disabling RNG early entropy source...[0m
+[0;32mI (452) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (453) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (453) esp_psram: Speed: 40MHz[0m
+[0;32mI (453) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (459) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (467) cpu_start: Multicore app[0m
+[0;32mI (1375) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1383) cpu_start: Pro cpu start user code[0m
+[0;32mI (1384) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1384) app_init: Application information:[0m
+[0;32mI (1384) app_init: Project name:     cam_streaming[0m
+[0;32mI (1388) app_init: App version:      1[0m
+[0;32mI (1392) app_init: Compile time:     May 17 2025 18:44:29[0m
+[0;32mI (1397) app_init: ELF file SHA256:  054f9016d...[0m
+[0;32mI (1401) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (1407) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1411) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (1415) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (1419) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1425) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (1430) heap_init: At 3FFB9A40 len 000265C0 (153 KiB): DRAM[0m
+[0;32mI (1436) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (1441) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (1447) heap_init: At 4009C474 len 00003B8C (14 KiB): IRAM[0m
+[0;32mI (1453) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (1460) spi_flash: detected chip: generic[0m
+[0;32mI (1463) spi_flash: flash io: dio[0m
+[0;32mI (1467) main_task: Started on CPU0[0m
+[0;32mI (1477) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1477) main_task: Calling app_main()[0m
+[0;32mI (1477) CAM: Program Started[0m
+
+[0;32mI (1517) cam_hal: cam init ok[0m
+[0;32mI (1517) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (1517) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (1547) camera: Detected camera at address=0x30[0m
+[0;32mI (1547) camera: Detected OV2640 camera[0m
+[0;32mI (1547) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (1627) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (1627) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: cam config ok[0m
+[0;32mI (1647) ov2640: Set PLL: clk_2x: 0, clk_div: 0, pclk_auto: 0, pclk_div: 8[0m
+[0;32mI (1717) CAM: Scan complete. 0 APs found:[0m
+[0;32mI (1727) wifi:wifi driver task: 3ffc261c, prio:23, stack:6656, core=0[0m
+[0;32mI (1737) wifi:wifi firmware version: cdb304370[0m
+[0;32mI (1737) wifi:wifi certification version: v7.0[0m
+[0;32mI (1737) wifi:config NVS flash: enabled[0m
+[0;32mI (1737) wifi:config nano formatting: disabled[0m
+[0;32mI (1747) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1747) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1757) wifi:Init management short buffer num: 32[0m
+[0;32mI (1757) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1757) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1767) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1767) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1777) wifi_init: rx ba win: 6[0m
+[0;32mI (1777) wifi_init: accept mbox: 6[0m
+[0;32mI (1777) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1787) wifi_init: udp mbox: 6[0m
+[0;32mI (1787) wifi_init: tcp mbox: 6[0m
+[0;32mI (1787) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1787) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1797) wifi_init: tcp mss: 1440[0m
+[0;32mI (1797) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1797) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1807) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1817) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1887) wifi:mode : sta (68:25:dd:2e:33:78)[0m
+[0;32mI (1897) wifi:enable tsf[0m
+[0;32mI (1897) CAM: Connecting to WiFi...[0m
+[0;32mI (2567) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2577) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2677) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2717) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2827) wifi:connected with Aussie Broadband 2278, aid = 28, channel 6, BW20, bssid = d0:db:b7:dd:60:91[0m
+[0;32mI (2827) wifi:security: WPA2-PSK, phy: bgn, rssi: -64[0m
+[0;32mI (2847) wifi:pm start, type: 1[0m
+
+[0;32mI (2847) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2877) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2897) CAM: Connected to AP: Aussie Broadband 2278 (RSSI: -64)[0m
+[0;32mI (2987) wifi:<ba-add>idx:0 (ifx:0, d0:db:b7:dd:60:91), tid:0, ssn:0, winSize:64[0m
+[0;32mI (4037) esp_netif_handlers: sta ip: 192.168.20.21, mask: 255.255.255.0, gw: 192.168.20.1[0m
+[0;32mI (4397) CAM: IP Address: 192.168.20.21[0m
+[0;32mI (4397) CAM: Subnet Mask: 255.255.255.0[0m
+[0;32mI (4397) CAM: Gateway: 192.168.20.1[0m
+[0;32mI (4397) CAM: Program Setup Ended[0m
+
+[0;32mI (4397) main_task: Returned from app_main()[0m
+[0;33mW (123617) cam_hal: NO-SOI[0m
+[0;33mW (158237) httpd_txrx: httpd_sock_err: error in send : 104[0m
+[0;33mW (158237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (158987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (159987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (160987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (161987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (162987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (163987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164237) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164287) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164337) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164387) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164437) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164487) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164537) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164587) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164637) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164687) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164737) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164787) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164837) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164887) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164937) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (164987) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (165037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (165037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (165037) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (165087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (165087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (165087) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (165137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (165137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (165137) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (165187) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (165187) httpd�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:44:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24f30h (151344) map[0m
+[0;32mI (141) esp_image: segment 1: paddr=00034f58 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00034f80 vaddr=3ffb0000 size=05034h ( 20532) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00039fbc vaddr=40080000 size=0605ch ( 24668) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a3634h (669236) map[0m
+[0;32mI (392) esp_image: segment 5: paddr=000e365c vaddr=4008605c size=16418h ( 91160) load[0m
+[0;32mI (441) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (441) boot: Disabling RNG early entropy source...[0m
+[0;32mI (452) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (453) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (453) esp_psram: Speed: 40MHz[0m
+[0;32mI (453) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (459) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (467) cpu_start: Multicore app[0m
+[0;32mI (1375) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1383) cpu_start: Pro cpu start user code[0m
+[0;32mI (1384) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1384) app_init: Application information:[0m
+[0;32mI (1384) app_init: Project name:     cam_streaming[0m
+[0;32mI (1388) app_init: App version:      1[0m
+[0;32mI (1392) app_init: Compile time:     May 17 2025 18:44:29[0m
+[0;32mI (1397) app_init: ELF file SHA256:  054f9016d...[0m
+[0;32mI (1401) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (1407) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1411) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (1415) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (1419) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1425) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (1430) heap_init: At 3FFB9A40 len 000265C0 (153 KiB): DRAM[0m
+[0;32mI (1436) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (1441) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (1447) heap_init: At 4009C474 len 00003B8C (14 KiB): IRAM[0m
+[0;32mI (1453) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (1460) spi_flash: detected chip: generic[0m
+[0;32mI (1463) spi_flash: flash io: dio[0m
+[0;32mI (1467) main_task: Started on CPU0[0m
+[0;32mI (1477) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1477) main_task: Calling app_main()[0m
+[0;32mI (1477) CAM: Program Started[0m
+
+[0;32mI (1517) cam_hal: cam init ok[0m
+[0;32mI (1517) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (1517) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (1547) camera: Detected camera at address=0x30[0m
+[0;32mI (1547) camera: Detected OV2640 camera[0m
+[0;32mI (1547) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (1627) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (1627) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: cam config ok[0m
+[0;32mI (1647) ov2640: Set PLL: clk_2x: 0, clk_div: 0, pclk_auto: 0, pclk_div: 8[0m
+[0;32mI (1717) CAM: Scan complete. 0 APs found:[0m
+[0;32mI (1727) wifi:wifi driver task: 3ffc26a0, prio:23, stack:6656, core=0[0m
+[0;32mI (1737) wifi:wifi firmware version: cdb304370[0m
+[0;32mI (1737) wifi:wifi certification version: v7.0[0m
+[0;32mI (1737) wifi:config NVS flash: enabled[0m
+[0;32mI (1737) wifi:config nano formatting: disabled[0m
+[0;32mI (1747) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1747) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1757) wifi:Init management short buffer num: 32[0m
+[0;32mI (1757) wifi:Initcam_hal: EV-EOF-OVF[0m
+ dynamic tx buffer num: 32
+[0;32mI (1767) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1767) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1767) wifi:Init dynamic rx buffer num: 32[0m
+[0;33mW (1767) cam_hal: NO-SOI[0m
+[0;33mW (1777) cam_hal: NO-SOI[0m
+[0;32mI (1777) wifi_init: rx ba win: 6[0m
+[0;32mI (1787) wifi_init: accept mbox: 6[0m
+[0;32mI (1787) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1787) wifi_init: udp mbox: 6[0m
+[0;32mI (1797) wifi_init: tcp mbox: 6[0m
+[0;32mI (1797) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1797) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1797) wifi_init: tcp mss: 1440[0m
+[0;32mI (1807) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1807) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1817) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1817) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1897) wifi:mode : sta (68:25:dd:2e:33:78)[0m
+[0;32mI (1897) wifi:enable tsf[0m
+[0;32mI (1907) CAM: Connecting to WiFi...[0m
+[0;32mI (1917) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1917) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1937) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1947) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1947) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1957) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (2247) wifi:tx null, bss is null[0m
+[0;33mW (2907) wifi:Haven't to connect to a suitable AP now![0m
+[0;33mW (2907) CAM: Not connected to any AP[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:44:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24f30h (151344) map[0m
+[0;32mI (141) esp_image: segment 1: paddr=00034f58 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00034f80 vaddr=3ffb0000 size=05034h ( 20532) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00039fbc vaddr=40080000 size=0605ch ( 24668) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a3634h (669236) map[0m
+[0;32mI (392) esp_image: segment 5: paddr=000e365c vaddr=4008605c size=16418h ( 91160) load[0m
+[0;32mI (441) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (441) boot: Disabling RNG early entropy source...[0m
+[0;32mI (452) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (453) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (453) esp_psram: Speed: 40MHz[0m
+[0;32mI (453) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (459) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (467) cpu_start: Multicore app[0m
+[0;32mI (1375) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1383) cpu_start: Pro cpu start user code[0m
+[0;32mI (1384) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1384) app_init: Application information:[0m
+[0;32mI (1384) app_init: Project name:     cam_streaming[0m
+[0;32mI (1388) app_init: App version:      1[0m
+[0;32mI (1392) app_init: Compile time:     May 17 2025 18:44:29[0m
+[0;32mI (1397) app_init: ELF file SHA256:  054f9016d...[0m
+[0;32mI (1401) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (1407) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1411) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (1415) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (1419) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1425) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (1430) heap_init: At 3FFB9A40 len 000265C0 (153 KiB): DRAM[0m
+[0;32mI (1436) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (1441) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (1447) heap_init: At 4009C474 len 00003B8C (14 KiB): IRAM[0m
+[0;32mI (1453) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (1460) spi_flash: detected chip: generic[0m
+[0;32mI (1463) spi_flash: flash io: dio[0m
+[0;32mI (1467) main_task: Started on CPU0[0m
+[0;32mI (1477) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1477) main_task: Calling app_main()[0m
+[0;32mI (1477) CAM: Program Started[0m
+
+[0;32mI (1517) cam_hal: cam init ok[0m
+[0;32mI (1517) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (1517) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (1547) camera: Detected camera at address=0x30[0m
+[0;32mI (1547) camera: Detected OV2640 camera[0m
+[0;32mI (1547) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (1627) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (1627) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: cam config ok[0m
+[0;32mI (1647) ov2640: Set PLL: clk_2x: 0, clk_div: 0, pclk_auto: 0, pclk_div: 8[0m
+[0;32mI (1717) CAM: Scan complete. 0 APs found:[0m
+[0;32mI (1727) wifi:wifi driver task: 3ffc26a0, prio:23, stack:6656, core=0[0m
+[0;32mI (1737) wifi:wifi firmware version: cdb304370[0m
+[0;32mI (1737) wifi:wifi certification version: v7.0[0m
+[0;32mI (1737) wifi:config NVS flash: enabled[0m
+[0;32mI (1737) wifi:config nano formatting: disabled[0m
+[0;32mI (1747) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1747) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1757) wifi:Init management short buffer num: 32[0m
+[0;32mI (1757) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1757) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1767) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1767) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1777) wifi_init: rx ba win: 6[0m
+[0;32mI (1777) wifi_init: accept mbox: 6[0m
+[0;32mI (1777) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1787) wifi_init: udp mbox: 6[0m
+[0;32mI (1787) wifi_init: tcp mbox: 6[0m
+[0;32mI (1787) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1787) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1797) wifi_init: tcp mss: 1440[0m
+[0;32mI (1797) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1797) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1807) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1817) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1897) wifi:mode : sta (68:25:dd:2e:33:78)[0m
+[0;32mI (1897) wifi:enable tsf[0m
+[0;32mI (1897) CAM: Connecting to WiFi...[0m
+[0;32mI (1907) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1907) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1927) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1937) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2007) wifi:connected with Aussie Broadband 2278, aid = 31, channel 6, BW20, bssid = d0:db:b7:dd:60:91[0m
+[0;32mI (2007) wifi:security: WPA2-PSK, phy: bgn, rssi: -67[0m
+[0;32mI (2017) wifi:pm start, type: 1[0m
+
+[0;32mI (2017) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2047) wifi:<ba-add>idx:0 (ifx:0, d0:db:b7:dd:60:91), tid:0, ssn:0, winSize:64[0m
+[0;32mI (2047) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2897) CAM: Connected to AP: Aussie Broadband 2278 (RSSI: -71)[0m
+[0;32mI (3077) esp_netif_handlers: sta ip: 192.168.20.21, mask: 255.255.255.0, gw: 192.168.20.1[0m
+[0;32mI (3397) CAM: IP Address: 192.168.20.21[0m
+[0;32mI (3397) CAM: Subnet Mask: 255.255.255.0[0m
+[0;32mI (3397) CAM: Gateway: 192.168.20.1[0m
+[0;32mI (3397) CAM: Program Setup Ended[0m
+
+[0;32mI (3397) main_task: Returned from app_main()[0m
+[0;33mW (59977) httpd_txrx: httpd_sock_err: error in send : 104[0m
+[0;33mW (59977) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (59977) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60027) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60027) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60027) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60077) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60077) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60077) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60127) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60127) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60127) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60177) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60177) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60177) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60227) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60227) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60227) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60277) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60277) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60277) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60327) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60327) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60327) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60377) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60377) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60377) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60427) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60427) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60427) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60477) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60477) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60477) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60527) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60527) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60527) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60577) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60577) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60577) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60627) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60627) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60627) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60677) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60677) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60677) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60727) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60727) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60727) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60777) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60777) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60777) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60827) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60827) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60827) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60877) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60877) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60877) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60927) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60927) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60927) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60977) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60977) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (60977) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61027) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61027) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61027) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61077) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61077) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61077) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61127) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61127) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61127) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61177) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61177) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61177) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61227) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61227) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61227) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61277) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61277) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61277) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61327) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61327) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61327) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61377) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61377) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61377) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61427) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61427) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61427) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61477) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61477) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61477) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61527) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61527) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61527) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61577) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61577) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61577) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61627) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61627) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61627) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61677) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61677) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61677) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61727) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61727) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61727) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61777) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61777) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61777) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61827) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61827) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61827) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61877) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61877) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61877) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61927) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61927) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61927) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61977) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61977) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (61977) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62027) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62027) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62027) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62077) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62077) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62077) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62127) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62127) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62127) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62177) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62177) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62177) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62227) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62227) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62227) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62277) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62277) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62277) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62327) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62327) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62327) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62377) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62377) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62377) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62427) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62427) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62427) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62477) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62477) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62477) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62527) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62527) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62527) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62577) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62577) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62577) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62627) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62627) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62627) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62677) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62677) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62677) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (62727) httpd�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:44:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24f30h (151344) map[0m
+[0;32mI (141) esp_image: segment 1: paddr=00034f58 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00034f80 vaddr=3ffb0000 size=05034h ( 20532) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00039fbc vaddr=40080000 size=0605ch ( 24668) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a3634h (669236) map[0m
+[0;32mI (392) esp_image: segment 5: paddr=000e365c vaddr=4008605c size=16418h ( 91160) load[0m
+[0;32mI (441) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (441) boot: Disabling RNG early entropy source...[0m
+[0;32mI (452) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (453) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (453) esp_psram: Speed: 40MHz[0m
+[0;32mI (453) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (459) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (467) cpu_start: Multicore app[0m
+[0;32mI (1375) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1383) cpu_start: Pro cpu start user code[0m
+[0;32mI (1384) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1384) app_init: Application information:[0m
+[0;32mI (1384) app_init: Project name:     cam_streaming[0m
+[0;32mI (1388) app_init: App version:      1[0m
+[0;32mI (1392) app_init: Compile time:     May 17 2025 18:44:29[0m
+[0;32mI (1397) app_init: ELF file SHA256:  054f9016d...[0m
+[0;32mI (1401) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (1407) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1411) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (1415) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (1419) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1425) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (1430) heap_init: At 3FFB9A40 len 000265C0 (153 KiB): DRAM[0m
+[0;32mI (1436) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (1441) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (1447) heap_init: At 4009C474 len 00003B8C (14 KiB): IRAM[0m
+[0;32mI (1453) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (1460) spi_flash: detected chip: generic[0m
+[0;32mI (1463) spi_flash: flash io: dio[0m
+[0;32mI (1467) main_task: Started on CPU0[0m
+[0;32mI (1477) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1477) main_task: Calling app_main()[0m
+[0;32mI (1477) CAM: Program Started[0m
+
+[0;32mI (1517) cam_hal: cam init ok[0m
+[0;32mI (1517) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (1517) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (1547) camera: Detected camera at address=0x30[0m
+[0;32mI (1547) camera: Detected OV2640 camera[0m
+[0;32mI (1547) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (1627) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (1627) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: cam config ok[0m
+[0;32mI (1647) ov2640: Set PLL: clk_2x: 0, clk_div: 0, pclk_auto: 0, pclk_div: 8[0m
+[0;32mI (1717) CAM: Scan complete. 0 APs found:[0m
+[0;32mI (1727) wifi:wifi driver task: 3ffc26a0, prio:23, stack:6656, core=0[0m
+[0;32mI (1737) wifi:wifi firmware version: cdb304370[0m
+[0;32mI (1737) wifi:wifi certification version: v7.0[0m
+[0;32mI (1737) wifi:config NVS flash: enabled[0m
+[0;32mI (1737) wifi:config nano formatting: disabled[0m
+[0;32mI (1747) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1747) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1757) wifi:Init management short buffer num: 32[0m
+[0;32mI (1757) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1757) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1767) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1767) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1777) wifi_init: rx ba win: 6[0m
+[0;32mI (1777) wifi_init: accept mbox: 6[0m
+[0;32mI (1777) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1787) wifi_init: udp mbox: 6[0m
+[0;32mI (1787) wifi_init: tcp mbox: 6[0m
+[0;32mI (1787) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1787) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1797) wifi_init: tcp mss: 1440[0m
+[0;32mI (1797) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1797) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1807) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1817) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1897) wifi:mode : sta (68:25:dd:2e:33:78)[0m
+[0;32mI (1897) wifi:enable tsf[0m
+[0;32mI (1897) CAM: Connecting to WiFi...[0m
+[0;32mI (1957) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1957) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1967) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1977) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2017) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (2027) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (2287) wifi:tx null, bss is null[0m
+[0;33mW (2897) wifi:Haven't to connect to a suitable AP now![0m
+[0;33mW (2897) CAM: Not connected to any AP[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:44:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24f30h (151344) map[0m
+[0;32mI (141) esp_image: segment 1: paddr=00034f58 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00034f80 vaddr=3ffb0000 size=05034h ( 20532) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00039fbc vaddr=40080000 size=0605ch ( 24668) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a3634h (669236) map[0m
+[0;32mI (392) esp_image: segment 5: paddr=000e365c vaddr=4008605c size=16418h ( 91160) load[0m
+[0;32mI (441) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (441) boot: Disabling RNG early entropy source...[0m
+[0;32mI (452) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (453) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (453) esp_psram: Speed: 40MHz[0m
+[0;32mI (453) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (459) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (467) cpu_start: Multicore app[0m
+[0;32mI (1375) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1383) cpu_start: Pro cpu start user code[0m
+[0;32mI (1384) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1384) app_init: Application information:[0m
+[0;32mI (1384) app_init: Project name:     cam_streaming[0m
+[0;32mI (1388) app_init: App version:      1[0m
+[0;32mI (1392) app_init: Compile time:     May 17 2025 18:44:29[0m
+[0;32mI (1397) app_init: ELF file SHA256:  054f9016d...[0m
+[0;32mI (1401) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (1407) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1411) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (1415) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (1419) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1425) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (1430) heap_init: At 3FFB9A40 len 000265C0 (153 KiB): DRAM[0m
+[0;32mI (1436) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (1441) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (1447) heap_init: At 4009C474 len 00003B8C (14 KiB): IRAM[0m
+[0;32mI (1453) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (1460) spi_flash: detected chip: generic[0m
+[0;32mI (1463) spi_flash: flash io: dio[0m
+[0;32mI (1467) main_task: Started on CPU0[0m
+[0;32mI (1477) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1477) main_task: Calling app_main()[0m
+[0;32mI (1477) CAM: Program Started[0m
+
+[0;32mI (1517) cam_hal: cam init ok[0m
+[0;32mI (1517) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (1517) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (1547) camera: Detected camera at address=0x30[0m
+[0;32mI (1547) camera: Detected OV2640 camera[0m
+[0;32mI (1547) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (1627) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (1627) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: cam config ok[0m
+[0;32mI (1647) ov2640: Set PLL: clk_2x: 0, clk_div: 0, pclk_auto: 0, pclk_div: 8[0m
+[0;32mI (1717) CAM: Scan complete. 0 APs found:[0m
+[0;32mI (1727) wifi:wifi driver task: 3ffc26a0, prio:23, stack:6656, core=0[0m
+[0;32mI (1737) wifi:wifi firmware version: cdb304370[0m
+[0;32mI (1737) wifi:wifi certification version: v7.0[0m
+[0;32mI (1737) wifi:config NVS flash: enabled[0m
+[0;32mI (1737) wifi:config nano formatting: disabled[0m
+[0;32mI (1747) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1747) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1757) wifi:Init management short buffer num: 32[0m
+[0;32mI (1757) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1757) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1767) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1767) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1777) wifi_init: rx ba win: 6[0m
+[0;32mI (1777) wifi_init: accept mbox: 6[0m
+[0;32mI (1777) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1787) wifi_init: udp mbox: 6[0m
+[0;32mI (1787) wifi_init: tcp mbox: 6[0m
+[0;32mI (1787) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1787) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1797) wifi_init: tcp mss: 1440[0m
+[0;32mI (1797) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1797) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1807) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1817) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1887) wifi:mode : sta (68:25:dd:2e:33:78)[0m
+[0;32mI (1897) wifi:enable tsf[0m
+[0;32mI (1897) CAM: Connecting to WiFi...[0m
+[0;32mI (1987) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1987) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1997) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2007) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2047) wifi:connected with Aussie Broadband 2278, aid = 23, channel 6, BW20, bssid = d0:db:b7:dd:60:91[0m
+[0;32mI (2047) wifi:security: WPA2-PSK, phy: bgn, rssi: -64[0m
+[0;32mI (2057) wifi:pm start, type: 1[0m
+
+[0;32mI (2057) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2077) wifi:<ba-add>idx:0 (ifx:0, d0:db:b7:dd:60:91), tid:0, ssn:0, winSize:64[0m
+[0;32mI (2077) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2897) CAM: Connected to AP: Aussie Broadband 2278 (RSSI: -67)[0m
+[0;32mI (3117) esp_netif_handlers: sta ip: 192.168.20.21, mask: 255.255.255.0, gw: 192.168.20.1[0m
+[0;32mI (3397) CAM: IP Address: 192.168.20.21[0m
+[0;32mI (3397) CAM: Subnet Mask: 255.255.255.0[0m
+[0;32mI (3397) CAM: Gateway: 192.168.20.1[0m
+[0;32mI (3397) CAM: Program Setup Ended[0m
+
+[0;32mI (3397) main_task: Returned from app_main()[0m
+[0;33mW (72567) httpd_txrx: httpd_sock_err: error in send : 104[0m
+[0;33mW (72617) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72617) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72617) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72667) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72667) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72667) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72717) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72717) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72717) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72767) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72767) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72767) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72817) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72817) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72817) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72867) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72867) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72867) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72917) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72917) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72917) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72967) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72967) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (72967) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73017) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73017) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73017) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73067) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73067) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73067) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73117) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73117) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73117) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73167) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73167) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73167) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73217) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73217) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73217) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73267) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73267) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73267) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73317) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73317) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73317) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73367) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73367) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73367) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73417) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73417) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73417) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73467) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73467) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73467) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73517) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73517) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73517) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73567) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73567) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73567) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73617) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73617) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73617) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73667) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73667) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73667) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73717) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73717) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73717) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73767) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73767) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73767) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73817) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73817) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73817) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73867) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73867) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73867) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73917) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73917) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73917) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73967) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73967) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (73967) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74017) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74017) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74017) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74067) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74067) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74067) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74117) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74117) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74117) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74167) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74167) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74167) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74217) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74217) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74217) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74267) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74267) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74267) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74317) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74317) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74317) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74367) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74367) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74367) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74417) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74417) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74417) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74467) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74467) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74467) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74517) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74517) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74517) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74567) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74567) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74567) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74617) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74617) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74617) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74667) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74667) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74667) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74717) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74717) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74717) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74767) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74767) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74767) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74817) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74817) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74817) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74867) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74867) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74867) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74917) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74917) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74917) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74967) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74967) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (74967) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (75017) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (75017) httpd_txrx: httpd_sock_err: error in send : 128[0m
+[0;33mW (75017) httpd_txrx: httpd_sock_err: error in send : 128[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:44:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24f30h (151344) map[0m
+[0;32mI (141) esp_image: segment 1: paddr=00034f58 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00034f80 vaddr=3ffb0000 size=05034h ( 20532) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00039fbc vaddr=40080000 size=0605ch ( 24668) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a3634h (669236) map[0m
+[0;32mI (392) esp_image: segment 5: paddr=000e365c vaddr=4008605c size=16418h ( 91160) load[0m
+[0;32mI (441) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (441) boot: Disabling RNG early entropy source...[0m
+[0;32mI (452) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (453) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (453) esp_psram: Speed: 40MHz[0m
+[0;32mI (453) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (459) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (467) cpu_start: Multicore app[0m
+[0;32mI (1375) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1383) cpu_start: Pro cpu start user code[0m
+[0;32mI (1384) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1384) app_init: Application information:[0m
+[0;32mI (1384) app_init: Project name:     cam_streaming[0m
+[0;32mI (1388) app_init: App version:      1[0m
+[0;32mI (1392) app_init: Compile time:     May 17 2025 18:44:29[0m
+[0;32mI (1397) app_init: ELF file SHA256:  054f9016d...[0m
+[0;32mI (1401) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (1407) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1411) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (1415) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (1419) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1425) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (1430) heap_init: At 3FFB9A40 len 000265C0 (153 KiB): DRAM[0m
+[0;32mI (1436) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (1441) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (1447) heap_init: At 4009C474 len 00003B8C (14 KiB): IRAM[0m
+[0;32mI (1453) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (1460) spi_flash: detected chip: generic[0m
+[0;32mI (1463) spi_flash: flash io: dio[0m
+[0;32mI (1467) main_task: Started on CPU0[0m
+[0;32mI (1477) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1477) main_task: Calling app_main()[0m
+[0;32mI (1477) CAM: Program Started[0m
+
+[0;32mI (1517) cam_hal: cam init ok[0m
+[0;32mI (1517) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (1517) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (1547) camera: Detected camera at address=0x30[0m
+[0;32mI (1547) camera: Detected OV2640 camera[0m
+[0;32mI (1547) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (1627) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (1627) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: cam config ok[0m
+[0;32mI (1647) ov2640: Set PLL: clk_2x: 0, clk_div: 0, pclk_auto: 0, pclk_div: 8[0m
+[0;32mI (1717) CAM: Scan complete. 0 APs found:[0m
+[0;32mI (1727) wifi:wifi driver task: 3ffc26a0, prio:23, stack:6656, core=0[0m
+[0;32mI (1737) wifi:wifi firmware version: cdb304370[0m
+[0;32mI (1737) wifi:wifi certification version: v7.0[0m
+[0;32mI (1737) wifi:config NVS flash: enabled[0m
+[0;32mI (1737) wifi:config nano formatting: disabled[0m
+[0;32mI (1747) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1747) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1757) wifi:Init management short buffer num: 32[0m
+[0;32mI (1757) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1757) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1767) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1767) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1777) wifi_init: rx ba win: 6[0m
+[0;32mI (1777) wifi_init: accept mbox: 6[0m
+[0;32mI (1777) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1787) wifi_init: udp mbox: 6[0m
+[0;32mI (1787) wifi_init: tcp mbox: 6[0m
+[0;32mI (1787) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1787) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1797) wifi_init: tcp mss: 1440[0m
+[0;32mI (1797) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1797) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1807) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1817) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1897) wifi:mode : sta (68:25:dd:2e:33:78)[0m
+[0;32mI (1897) wifi:enable tsf[0m
+[0;32mI (1897) CAM: Connecting to WiFi...[0m
+[0;32mI (1917) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1917) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1937) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1947) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1987) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1997) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (2257) wifi:tx null, bss is null[0m
+[0;33mW (2897) wifi:Haven't to connect to a suitable AP now![0m
+[0;33mW (2897) CAM: Not connected to any AP[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3703-gf9765d0316 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 17 2025 18:44:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24f30h (151344) map[0m
+[0;32mI (141) esp_image: segment 1: paddr=00034f58 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00034f80 vaddr=3ffb0000 size=05034h ( 20532) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00039fbc vaddr=40080000 size=0605ch ( 24668) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a3634h (669236) map[0m
+[0;32mI (392) esp_image: segment 5: paddr=000e365c vaddr=4008605c size=16418h ( 91160) load[0m
+[0;32mI (441) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (441) boot: Disabling RNG early entropy source...[0m
+[0;32mI (452) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (453) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (453) esp_psram: Speed: 40MHz[0m
+[0;32mI (453) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (459) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (467) cpu_start: Multicore app[0m
+[0;32mI (1375) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1383) cpu_start: Pro cpu start user code[0m
+[0;32mI (1384) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1384) app_init: Application information:[0m
+[0;32mI (1384) app_init: Project name:     cam_streaming[0m
+[0;32mI (1388) app_init: App version:      1[0m
+[0;32mI (1392) app_init: Compile time:     May 17 2025 18:44:29[0m
+[0;32mI (1397) app_init: ELF file SHA256:  054f9016d...[0m
+[0;32mI (1401) app_init: ESP-IDF:          v5.5-dev-3703-gf9765d0316[0m
+[0;32mI (1407) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1411) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (1415) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (1419) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1425) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (1430) heap_init: At 3FFB9A40 len 000265C0 (153 KiB): DRAM[0m
+[0;32mI (1436) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (1441) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (1447) heap_init: At 4009C474 len 00003B8C (14 KiB): IRAM[0m
+[0;32mI (1453) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (1460) spi_flash: detected chip: generic[0m
+[0;32mI (1463) spi_flash: flash io: dio[0m
+[0;32mI (1467) main_task: Started on CPU0[0m
+[0;32mI (1477) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1477) main_task: Calling app_main()[0m
+[0;32mI (1477) CAM: Program Started[0m
+
+[0;32mI (1517) cam_hal: cam init ok[0m
+[0;32mI (1517) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (1517) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (1547) camera: Detected camera at address=0x30[0m
+[0;32mI (1547) camera: Detected OV2640 camera[0m
+[0;32mI (1547) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (1627) cam_hal: buffer_size: 32768, half_buffer_size: 4096, node_buffer_size: 2048, node_cnt: 16, total_cnt: 3[0m
+[0;32mI (1627) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: Allocating 15360 Byte frame buffer in PSRAM[0m
+[0;32mI (1637) cam_hal: cam config ok[0m
+[0;32mI (1647) ov2640: Set PLL: clk_2x: 0, clk_div: 0, pclk_auto: 0, pclk_div: 8[0m
+[0;32mI (1717) CAM: Scan complete. 0 APs found:[0m
+[0;32mI (1727) wifi:wifi driver task: 3ffc26a0, prio:23, stack:6656, core=0[0m
+[0;32mI (1737) wifi:wifi firmware version: cdb304370[0m
+[0;32mI (1737) wifi:wifi certification version: v7.0[0m
+[0;32mI (1737) wifi:config NVS flash: enabled[0m
+[0;32mI (1737) wifi:config nano formatting: disabled[0m
+[0;32mI (1747) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1747) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1757) wifi:Init management short buffer num: 32[0m
+[0;32mI (1757) wifi:Initcam_hal: EV-EOF-OVF[0m
+ dynamic tx buffer num: 32
+[0;32mI (1767) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1767) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1767) wifi:Init dynamic rx buffer num: 32[0m
+[0;33mW (1767) cam_hal: NO-SOI[0m
+[0;33mW (1777) cam_hal: NO-SOI[0m
+[0;32mI (1777) wifi_init: rx ba win: 6[0m
+[0;32mI (1787) wifi_init: accept mbox: 6[0m
+[0;32mI (1787) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1787) wifi_init: udp mbox: 6[0m
+[0;32mI (1797) wifi_init: tcp mbox: 6[0m
+[0;32mI (1797) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1797) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1797) wifi_init: tcp mss: 1440[0m
+[0;32mI (1807) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1807) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1817) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1817) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1897) wifi:mode : sta (68:25:dd:2e:33:78)[0m
+[0;32mI (1897) wifi:enable tsf[0m
+[0;32mI (1907) CAM: Connecting to WiFi...[0m
+[0;32mI (1947) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1947) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1967) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1977) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2057) wifi:connected with Aussie Broadband 2278, aid = 33, channel 6, BW20, bssid = d0:db:b7:dd:60:91[0m
+[0;32mI (2057) wifi:security: WPA2-PSK, phy: bgn, rssi: -59[0m
+[0;32mI (2067) wifi:pm start, type: 1[0m
+
+[0;32mI (2067) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2097) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2117) wifi:<ba-add>idx:0 (ifx:0, d0:db:b7:dd:60:91), tid:0, ssn:0, winSize:64[0m
+[0;32mI (2907) CAM: Connected to AP: Aussie Broadband 2278 (RSSI: -64)[0m
+[0;32mI (3147) esp_netif_handlers: sta ip: 192.168.20.21, mask: 255.255.255.0, gw: 192.168.20.1[0m
+[0;32mI (3407) CAM: IP Address: 192.168.20.21[0m
+[0;32mI (3407) CAM: Subnet Mask: 255.255.255.0[0m
+[0;32mI (3407) CAM: Gateway: 192.168.20.1[0m
+[0;32mI (3407) CAM: Program Setup Ended[0m
+
+[0;32mI (3407) main_task: Returned from app_main()[0m

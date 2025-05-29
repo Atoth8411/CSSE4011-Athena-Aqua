@@ -1,0 +1,6 @@
+Command: ninja all
+[0/1] Re-running CMake...
+-- Configuring incomplete, errors occurred!
+See also "/home/atoth/EspCam4011/cam_streaming/build/CMakeFiles/CMakeOutput.log".
+FAILED: build.ninja 
+/usr/bin/cmake --regenerate-during-build -S/home/atoth/EspCam4011/cam_streaming -B/home/atoth/EspCam4011/cam_streaming/build

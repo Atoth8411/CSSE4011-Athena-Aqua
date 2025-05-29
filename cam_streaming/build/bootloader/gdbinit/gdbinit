@@ -1,0 +1,2 @@
+source /home/atoth/EspCam4011/cam_streaming/build/bootloader/gdbinit/symbols
+source /home/atoth/EspCam4011/cam_streaming/build/bootloader/gdbinit/connect

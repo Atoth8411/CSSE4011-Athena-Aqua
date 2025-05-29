@@ -1,0 +1,73 @@
+Command: ninja flash
+[1/5] cd /home/atoth/EspCam4011/cam_streaming/build/esp-idf/esptool_py && /home/atoth/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/atoth/EspCam4011/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/atoth/EspCam4011/cam_streaming/build/partition_table/partition-table.bin /home/atoth/EspCam4011/cam_streaming/build/cam_streaming.bin
+cam_streaming.bin binary size 0xcf7b0 bytes. Smallest app partition is 0x100000 bytes. 0x30850 bytes (19%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/atoth/EspCam4011/cam_streaming/build/bootloader/esp-idf/esptool_py && /home/atoth/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/atoth/EspCam4011/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/atoth/EspCam4011/cam_streaming/build/bootloader/bootloader.bin
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[2/3] cd /home/atoth/EspCam4011/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/atoth/EspCam4011/esp-idf -D "SERIAL_TOOL=/home/atoth/.espressif/python_env/idf6.0_py3.10_env/bin/python;;/home/atoth/EspCam4011/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/atoth/EspCam4011/cam_streaming/build -P /home/atoth/EspCam4011/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 cam_streaming.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.9.dev8
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 68:25:dd:2e:33:78
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000dffff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26240 bytes to 16510...
+Writing at 0x00001000... (50 %)
+Writing at 0x000075ce... (100 %)
+Wrote 26240 bytes (16510 compressed) at 0x00001000 in 0.5 seconds (effective 399.7 kbit/s)...
+Hash of data verified.
+Compressed 849840 bytes to 530905...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001cc4e... (6 %)
+Writing at 0x00026192... (9 %)
+Writing at 0x0002f4ee... (12 %)
+Writing at 0x00035613... (15 %)
+Writing at 0x0003b7ec... (18 %)
+Writing at 0x00042fd7... (21 %)
+Writing at 0x00048b26... (24 %)
+Writing at 0x0004e8e9... (27 %)
+Writing at 0x0005487e... (30 %)
+Writing at 0x0005aca3... (33 %)
+Writing at 0x0005fece... (36 %)
+Writing at 0x000651ba... (39 %)
+Writing at 0x0006a9f4... (42 %)
+Writing at 0x000701a4... (45 %)
+Writing at 0x00075465... (48 %)
+Writing at 0x0007aa8b... (51 %)
+Writing at 0x00080669... (54 %)
+Writing at 0x00086038... (57 %)
+Writing at 0x0008bb22... (60 %)
+Writing at 0x00091823... (63 %)
+Writing at 0x000971c7... (66 %)
+Writing at 0x0009ce2e... (69 %)
+Writing at 0x000a2b2e... (72 %)
+Writing at 0x000a84f1... (75 %)
+Writing at 0x000ae8da... (78 %)
+Writing at 0x000b8aa0... (81 %)
+Writing at 0x000be797... (84 %)
+Writing at 0x000c5999... (87 %)
+Writing at 0x000cc17d... (90 %)
+Writing at 0x000d1b28... (93 %)
+Writing at 0x000d7c5a... (96 %)
+Writing at 0x000dcf20... (100 %)
+Wrote 849840 bytes (530905 compressed) at 0x00010000 in 12.5 seconds (effective 544.7 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 1261.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/atoth/EspCam4011/cam_streaming/build/CMakeFiles/bootloader
+/home/atoth/EspCam4011/cam_streaming/build/CMakeFiles/bootloader.rule
+/home/atoth/EspCam4011/cam_streaming/build/CMakeFiles/bootloader-complete.rule
+/home/atoth/EspCam4011/cam_streaming/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/atoth/EspCam4011/cam_streaming/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/atoth/EspCam4011/cam_streaming/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/atoth/EspCam4011/cam_streaming/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/atoth/EspCam4011/cam_streaming/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/atoth/EspCam4011/cam_streaming/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/atoth/EspCam4011/cam_streaming/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

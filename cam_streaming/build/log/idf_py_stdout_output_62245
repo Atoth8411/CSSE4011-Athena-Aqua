@@ -1,0 +1,73 @@
+Command: ninja all
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/atoth/EspCam4011/cam_streaming/build/bootloader/esp-idf/esptool_py && /home/atoth/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/atoth/EspCam4011/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/atoth/EspCam4011/cam_streaming/build/bootloader/bootloader.bin
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj 
+/home/atoth/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.5-dev-3703-gf9765d0316\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/atoth/EspCam4011/cam_streaming/build/config -I/home/atoth/EspCam4011/cam_streaming/main -I/home/atoth/EspCam4011/esp-idf/components/newlib/platform_include -I/home/atoth/EspCam4011/esp-idf/components/freertos/config/include -I/home/atoth/EspCam4011/esp-idf/components/freertos/config/include/freertos -I/home/atoth/EspCam4011/esp-idf/components/freertos/config/xtensa/include -I/home/atoth/EspCam4011/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/atoth/EspCam4011/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/atoth/EspCam4011/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/atoth/EspCam4011/esp-idf/components/freertos/esp_additions/include -I/home/atoth/EspCam4011/esp-idf/components/esp_hw_support/include -I/home/atoth/EspCam4011/esp-idf/components/esp_hw_support/include/soc -I/home/atoth/EspCam4011/esp-idf/components/esp_hw_support/include/soc/esp32 -I/home/atoth/EspCam4011/esp-idf/components/esp_hw_support/dma/include -I/home/atoth/EspCam4011/esp-idf/components/esp_hw_support/ldo/include -I/home/atoth/EspCam4011/esp-idf/components/esp_hw_support/debug_probe/include -I/home/atoth/EspCam4011/esp-idf/components/esp_hw_support/mspi_timing_tuning/include -I/home/atoth/EspCam4011/esp-idf/components/esp_hw_support/power_supply/include -I/home/atoth/EspCam4011/esp-idf/components/esp_hw_support/port/esp32/. -I/home/atoth/EspCam4011/esp-idf/components/esp_hw_support/port/esp32/include -I/home/atoth/EspCam4011/esp-idf/components/heap/include -I/home/atoth/EspCam4011/esp-idf/components/heap/tlsf -I/home/atoth/EspCam4011/esp-idf/components/log/include -I/home/atoth/EspCam4011/esp-idf/components/soc/include -I/home/atoth/EspCam4011/esp-idf/components/soc/esp32 -I/home/atoth/EspCam4011/esp-idf/components/soc/esp32/include -I/home/atoth/EspCam4011/esp-idf/components/soc/esp32/register -I/home/atoth/EspCam4011/esp-idf/components/hal/platform_port/include -I/home/atoth/EspCam4011/esp-idf/components/hal/esp32/include -I/home/atoth/EspCam4011/esp-idf/components/hal/include -I/home/atoth/EspCam4011/esp-idf/components/esp_rom/include -I/home/atoth/EspCam4011/esp-idf/components/esp_rom/esp32/include -I/home/atoth/EspCam4011/esp-idf/components/esp_rom/esp32/include/esp32 -I/home/atoth/EspCam4011/esp-idf/components/esp_rom/esp32 -I/home/atoth/EspCam4011/esp-idf/components/esp_common/include -I/home/atoth/EspCam4011/esp-idf/components/esp_system/include -I/home/atoth/EspCam4011/esp-idf/components/esp_system/port/soc -I/home/atoth/EspCam4011/esp-idf/components/esp_system/port/include/private -I/home/atoth/EspCam4011/esp-idf/components/xtensa/esp32/include -I/home/atoth/EspCam4011/esp-idf/components/xtensa/include -I/home/atoth/EspCam4011/esp-idf/components/xtensa/deprecated_include -I/home/atoth/EspCam4011/esp-idf/components/lwip/include -I/home/atoth/EspCam4011/esp-idf/components/lwip/include/apps -I/home/atoth/EspCam4011/esp-idf/components/lwip/include/apps/sntp -I/home/atoth/EspCam4011/esp-idf/components/lwip/lwip/src/include -I/home/atoth/EspCam4011/esp-idf/components/lwip/port/include -I/home/atoth/EspCam4011/esp-idf/components/lwip/port/freertos/include -I/home/atoth/EspCam4011/esp-idf/components/lwip/port/esp32xx/include -I/home/atoth/EspCam4011/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/atoth/EspCam4011/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/atoth/EspCam4011/esp-idf/components/esp_event/include -I/home/atoth/EspCam4011/esp-idf/components/nvs_flash/include -I/home/atoth/EspCam4011/esp-idf/components/esp_partition/include -I/home/atoth/EspCam4011/esp-idf/components/esp_netif/include -I/home/atoth/EspCam4011/esp-idf/components/esp_wifi/include -I/home/atoth/EspCam4011/esp-idf/components/esp_wifi/include/local -I/home/atoth/EspCam4011/esp-idf/components/esp_wifi/wifi_apps/include -I/home/atoth/EspCam4011/esp-idf/components/esp_wifi/wifi_apps/nan_app/include -I/home/atoth/EspCam4011/esp-idf/components/esp_phy/include -I/home/atoth/EspCam4011/esp-idf/components/esp_phy/esp32/include -I/home/atoth/EspCam4011/esp-idf/components/esp_http_server/include -I/home/atoth/EspCam4011/esp-idf/components/http_parser -I/home/atoth/EspCam4011/cam_streaming/managed_components/espressif__esp32-camera/driver/include -I/home/atoth/EspCam4011/cam_streaming/managed_components/espressif__esp32-camera/conversions/include -I/home/atoth/EspCam4011/esp-idf/components/driver/deprecated -I/home/atoth/EspCam4011/esp-idf/components/driver/i2c/include -I/home/atoth/EspCam4011/esp-idf/components/driver/touch_sensor/include -I/home/atoth/EspCam4011/esp-idf/components/driver/twai/include -I/home/atoth/EspCam4011/esp-idf/components/driver/touch_sensor/esp32/include -I/home/atoth/EspCam4011/esp-idf/components/esp_pm/include -I/home/atoth/EspCam4011/esp-idf/components/esp_ringbuf/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_gpio/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_pcnt/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_gptimer/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_spi/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_mcpwm/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_ana_cmpr/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_i2s/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_sdmmc/include -I/home/atoth/EspCam4011/esp-idf/components/sdmmc/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_sdspi/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_sdio/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_dac/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_rmt/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_tsens/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_sdm/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_i2c/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_uart/include -I/home/atoth/EspCam4011/esp-idf/components/vfs/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_ledc/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_parlio/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_usb_serial_jtag/include -I/home/atoth/EspCam4011/esp-idf/components/esp_driver_twai/include -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -mdisable-hardware-atomics -mfix-esp32-psram-cache-issue -mfix-esp32-psram-cache-strategy=memw -Og -fno-shrink-wrap -fmacro-prefix-map=/home/atoth/EspCam4011/cam_streaming=. -fmacro-prefix-map=/home/atoth/EspCam4011/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -c /home/atoth/EspCam4011/cam_streaming/main/main.c
+/home/atoth/EspCam4011/cam_streaming/main/main.c: In function 'uart_stream_task':
+/home/atoth/EspCam4011/cam_streaming/main/main.c:242:26: error: 'UART_NUM_1' undeclared (first use in this function)
+  242 |     const int uart_num = UART_NUM_1;  // or UART_NUM_0
+      |                          ^~~~~~~~~~
+/home/atoth/EspCam4011/cam_streaming/main/main.c:242:26: note: each undeclared identifier is reported only once for each function it appears in
+/home/atoth/EspCam4011/cam_streaming/main/main.c:246:5: error: unknown type name 'uart_config_t'; did you mean 'wifi_config_t'?
+  246 |     uart_config_t uart_config = {
+      |     ^~~~~~~~~~~~~
+      |     wifi_config_t
+/home/atoth/EspCam4011/cam_streaming/main/main.c:247:9: error: field name not in record or union initializer
+  247 |         .baud_rate = 1152000, // Higher is better (check USB-UART bridge limits)
+      |         ^
+/home/atoth/EspCam4011/cam_streaming/main/main.c:247:9: note: (near initialization for 'uart_config')
+/home/atoth/EspCam4011/cam_streaming/main/main.c:248:9: error: field name not in record or union initializer
+  248 |         .data_bits = UART_DATA_8_BITS,
+      |         ^
+/home/atoth/EspCam4011/cam_streaming/main/main.c:248:9: note: (near initialization for 'uart_config')
+/home/atoth/EspCam4011/cam_streaming/main/main.c:248:22: error: 'UART_DATA_8_BITS' undeclared (first use in this function)
+  248 |         .data_bits = UART_DATA_8_BITS,
+      |                      ^~~~~~~~~~~~~~~~
+/home/atoth/EspCam4011/cam_streaming/main/main.c:248:22: warning: excess elements in scalar initializer
+/home/atoth/EspCam4011/cam_streaming/main/main.c:248:22: note: (near initialization for 'uart_config')
+/home/atoth/EspCam4011/cam_streaming/main/main.c:249:9: error: field name not in record or union initializer
+  249 |         .parity    = UART_PARITY_DISABLE,
+      |         ^
+/home/atoth/EspCam4011/cam_streaming/main/main.c:249:9: note: (near initialization for 'uart_config')
+/home/atoth/EspCam4011/cam_streaming/main/main.c:249:22: error: 'UART_PARITY_DISABLE' undeclared (first use in this function)
+  249 |         .parity    = UART_PARITY_DISABLE,
+      |                      ^~~~~~~~~~~~~~~~~~~
+/home/atoth/EspCam4011/cam_streaming/main/main.c:249:22: warning: excess elements in scalar initializer
+/home/atoth/EspCam4011/cam_streaming/main/main.c:249:22: note: (near initialization for 'uart_config')
+/home/atoth/EspCam4011/cam_streaming/main/main.c:250:9: error: field name not in record or union initializer
+  250 |         .stop_bits = UART_STOP_BITS_1,
+      |         ^
+/home/atoth/EspCam4011/cam_streaming/main/main.c:250:9: note: (near initialization for 'uart_config')
+/home/atoth/EspCam4011/cam_streaming/main/main.c:250:22: error: 'UART_STOP_BITS_1' undeclared (first use in this function)
+  250 |         .stop_bits = UART_STOP_BITS_1,
+      |                      ^~~~~~~~~~~~~~~~
+/home/atoth/EspCam4011/cam_streaming/main/main.c:250:22: warning: excess elements in scalar initializer
+/home/atoth/EspCam4011/cam_streaming/main/main.c:250:22: note: (near initialization for 'uart_config')
+/home/atoth/EspCam4011/cam_streaming/main/main.c:251:9: error: field name not in record or union initializer
+  251 |         .flow_ctrl = UART_HW_FLOWCTRL_DISABLE
+      |         ^
+/home/atoth/EspCam4011/cam_streaming/main/main.c:251:9: note: (near initialization for 'uart_config')
+/home/atoth/EspCam4011/cam_streaming/main/main.c:251:22: error: 'UART_HW_FLOWCTRL_DISABLE' undeclared (first use in this function)
+  251 |         .flow_ctrl = UART_HW_FLOWCTRL_DISABLE
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/atoth/EspCam4011/cam_streaming/main/main.c:251:22: warning: excess elements in scalar initializer
+/home/atoth/EspCam4011/cam_streaming/main/main.c:251:22: note: (near initialization for 'uart_config')
+/home/atoth/EspCam4011/cam_streaming/main/main.c:253:5: error: implicit declaration of function 'uart_driver_install' [-Wimplicit-function-declaration]
+  253 |     uart_driver_install(uart_num, 1024 * 2, 0, 0, NULL, 0);
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/atoth/EspCam4011/cam_streaming/main/main.c:254:5: error: implicit declaration of function 'uart_param_config' [-Wimplicit-function-declaration]
+  254 |     uart_param_config(uart_num, &uart_config);
+      |     ^~~~~~~~~~~~~~~~~
+/home/atoth/EspCam4011/cam_streaming/main/main.c:255:5: error: implicit declaration of function 'uart_set_pin'; did you mean 'ledc_set_pin'? [-Wimplicit-function-declaration]
+  255 |     uart_set_pin(uart_num, tx_pin, rx_pin, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+      |     ^~~~~~~~~~~~
+      |     ledc_set_pin
+/home/atoth/EspCam4011/cam_streaming/main/main.c:255:44: error: 'UART_PIN_NO_CHANGE' undeclared (first use in this function)
+  255 |     uart_set_pin(uart_num, tx_pin, rx_pin, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+      |                                            ^~~~~~~~~~~~~~~~~~
+/home/atoth/EspCam4011/cam_streaming/main/main.c:272:9: error: implicit declaration of function 'uart_write_bytes' [-Wimplicit-function-declaration]
+  272 |         uart_write_bytes(uart_num, (const char *)size_buf, 4);
+      |         ^~~~~~~~~~~~~~~~
+ninja: build stopped: subcommand failed.

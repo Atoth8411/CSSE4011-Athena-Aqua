@@ -1,0 +1,16 @@
+Command: ninja all
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/atoth/EspCam4011/cam_streaming/build/bootloader/esp-idf/esptool_py && /home/atoth/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/atoth/EspCam4011/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/atoth/EspCam4011/cam_streaming/build/bootloader/bootloader.bin
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[3/7] Linking C static library esp-idf/main/libmain.a
+[4/7] Generating esp-idf/esp_system/ld/sections.ld
+[5/7] Linking CXX executable cam_streaming.elf
+[6/7] Generating binary image from built executable
+esptool.py v4.9.dev8
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/atoth/EspCam4011/cam_streaming/build/cam_streaming.bin
+[7/7] cd /home/atoth/EspCam4011/cam_streaming/build/esp-idf/esptool_py && /home/atoth/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/atoth/EspCam4011/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/atoth/EspCam4011/cam_streaming/build/partition_table/partition-table.bin /home/atoth/EspCam4011/cam_streaming/build/cam_streaming.bin
+cam_streaming.bin binary size 0xe87a0 bytes. Smallest app partition is 0x100000 bytes. 0x17860 bytes (9%) free.
