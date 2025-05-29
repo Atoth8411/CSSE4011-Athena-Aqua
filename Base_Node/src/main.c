@@ -72,7 +72,6 @@ int main(void) {
         printk("It is actually a problem %d\r\n", power_info.handle);
         settings_loaded = false;
     }
-    settings_loaded = false;
 
     printk("handle: %d\r\n",angle_info.handle);
 

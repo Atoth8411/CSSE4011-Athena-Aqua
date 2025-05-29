@@ -48,7 +48,7 @@ static void write_cb(struct bt_conn *conn, uint8_t err,
 // Keep the write_params static to ensure it persists during the async call
 static struct bt_gatt_write_params write_params;
 
-int write_data_with_response(int16_t value, volatile struct service_info* info)
+int write_data_with_response(uint8_t value, volatile struct service_info* info)
 {
     struct bt_conn *conn = bt_conn_ref(default_conn);
     if (!conn) {
@@ -64,13 +64,13 @@ int write_data_with_response(int16_t value, volatile struct service_info* info)
     write_params.handle = info->handle;
     write_params.offset = 0;
     write_params.data = &value;
-    write_params.length = sizeof(value);
+    write_params.length = sizeof(value); // Now correctly 1 byte
 
     int err = bt_gatt_write(conn, &write_params);
     if (err) {
         printk("Failed to write %s (err %d)\n", info->name, err);
     } else {
-        printk("%s value %d written to server (write with response)\n", info->name, value);
+        printk("%s value %u written to server (write with response)\n", info->name, value);
     }
 
     bt_conn_unref(conn);
@@ -162,7 +162,7 @@ static uint8_t discover_func(struct bt_conn *conn,
 		//related to this
 		run_discovery(&character_params,BT_GATT_DISCOVER_CHARACTERISTIC, start_handle, end_handle,NULL);
 
-        return BT_GATT_ITER_STOP;
+        return BT_GATT_ITER_CONTINUE;
     }
 
     if (params->type == BT_GATT_DISCOVER_CHARACTERISTIC) {
@@ -189,7 +189,8 @@ static uint8_t discover_func(struct bt_conn *conn,
             }
         }
 
-		if (angle_info.handle && distance_info.handle && power_info.handle) {
+		if (angle_info.discovered && distance_info.discovered && power_info.discovered) {
+            //printk("%d, %d, %d\r\n",power_info.handle, angle_info.handle, distance_info.handle);
 			run_discovery(&descriptor_params,BT_GATT_DISCOVER_DESCRIPTOR, distance_info.handle + 1, end_handle, NULL);
 
             return BT_GATT_ITER_STOP;
